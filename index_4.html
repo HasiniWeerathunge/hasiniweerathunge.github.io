@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hasini Weerathunge | Postdoctoral Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f2;
+      --text: #1a1a1a;
+      --muted: #6b6560;
+      --accent: #2d5a4e;
+      --border: #dedad5;
+      --card: #ffffff;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(247,245,242,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 max(2rem, 8vw);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* LAYOUT */
+    main { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+
+    /* HERO */
+    #hero {
+      padding-top: 140px;
+      padding-bottom: 5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+    .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.4rem;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
+    }
+    .btn-primary:hover { background: #1e3f36; border-color: #1e3f36; }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+
+    .hero-avatar {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c8ddd9 0%, #a8c5bf 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      letter-spacing: -0.02em;
+      box-shadow: 0 2px 20px rgba(45,90,78,0.12);
+    }
+
+    /* SECTION HEADINGS */
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .about-text p { color: var(--muted); font-size: 0.95rem; line-height: 1.9; margin-bottom: 1rem; }
+    .about-details { }
+    .detail-row {
+      display: flex; flex-direction: column;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .detail-row:first-child { border-top: 1px solid var(--border); }
+    .detail-label {
+      font-size: 0.7rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem;
+    }
+    .detail-val { font-size: 0.92rem; color: var(--text); }
+
+    /* PUBLICATIONS */
+    .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .pub-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.6rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .pub-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 16px rgba(45,90,78,0.07);
+    }
+    .pub-year {
+      font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+    .pub-authors {
+      font-size: 0.82rem; color: var(--muted); margin-bottom: 0.3rem;
+    }
+    .pub-journal {
+      font-size: 0.82rem; color: var(--muted);
+      font-style: italic;
+    }
+    .pub-links { margin-top: 0.8rem; display: flex; gap: 0.8rem; }
+    .pub-link {
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .pub-link:hover { border-color: var(--accent); }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.6rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 16px rgba(45,90,78,0.07);
+    }
+    .project-icon {
+      font-size: 1.4rem; margin-bottom: 1rem;
+      display: block;
+    }
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .project-desc {
+      font-size: 0.84rem; color: var(--muted); line-height: 1.75;
+    }
+
+    /* TALKS */
+    .talks-list { display: flex; flex-direction: column; gap: 0; }
+    .talk-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .talk-item:first-child { border-top: 1px solid var(--border); }
+    .talk-year {
+      font-size: 0.75rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent);
+      padding-top: 0.2rem;
+    }
+    .talk-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .talk-venue {
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .talk-type {
+      display: inline-block;
+      font-size: 0.65rem; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(45,90,78,0.08);
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    /* CONTACT */
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-text p {
+      font-size: 0.95rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.2rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-size: 0.88rem; color: var(--text);
+      text-decoration: none;
+      padding: 0.9rem 1.1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); }
+    .contact-icon { font-size: 1rem; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* FADE-IN ANIMATION */
+    .fade-in {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* MENTORING */
+    .mentoring-philosophy {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .mentoring-philosophy p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 0.8rem;
+    }
+    .mentoring-philosophy p:last-child { margin-bottom: 0; }
+
+    .mentoring-category {
+      margin-bottom: 2.5rem;
+    }
+    .mentoring-category-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .mentee-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .mentee-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.1rem 1.3rem;
+      transition: border-color 0.2s;
+    }
+    .mentee-card:hover { border-color: var(--accent); }
+    .mentee-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .mentee-detail {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .mentee-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      background: rgba(45,90,78,0.08);
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .program-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .program-card:hover { border-color: var(--accent); }
+    .program-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+    .program-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .program-meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.6rem;
+    }
+
+    .opportunities-box {
+      background: rgba(45,90,78,0.04);
+      border: 1px solid rgba(45,90,78,0.2);
+      border-radius: 4px;
+      padding: 1.6rem 2rem;
+      margin-top: 1rem;
+    }
+    .opportunities-box h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    .opportunities-box p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 0.6rem;
+    }
+    .opportunities-box p:last-child { margin-bottom: 0; }
+
+    /* TEACHING */
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .teaching-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .teaching-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 16px rgba(45,90,78,0.07);
+    }
+    .teaching-card-icon { font-size: 1.3rem; display: block; margin-bottom: 0.8rem; }
+    .teaching-card-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+    .teaching-card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .teaching-card-level {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.6rem;
+    }
+
+    .tutorial-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .tutorial-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 16px rgba(45,90,78,0.07);
+    }
+    .tutorial-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+    }
+    .tutorial-card-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    .tutorial-badge {
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tutorial-badge-live {
+      background: rgba(45,90,78,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(45,90,78,0.25);
+    }
+    .tutorial-badge-soon {
+      background: rgba(107,101,96,0.08);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .tutorial-card-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .tutorial-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .tutorial-topic {
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(45,90,78,0.25);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+    .tutorial-footer {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .tutorial-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      transition: opacity 0.2s;
+    }
+    .tutorial-link:hover { opacity: 0.7; }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .experience-row:first-child { border-top: 1px solid var(--border); }
+    .experience-year {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      padding-top: 0.1rem;
+    }
+    .experience-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+    }
+    .experience-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* TRAINING */
+    .training-category { margin-bottom: 2.8rem; }
+    .training-category-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .training-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.1rem 1.3rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .training-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(45,90,78,0.07);
+    }
+    .training-card-year {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+    .training-card-title {
+      font-family: var(--serif);
+      font-size: 0.98rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+      line-height: 1.35;
+    }
+    .training-card-org {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* BEYOND THE LAB */
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .beyond-feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .beyond-feature:hover { box-shadow: 0 4px 24px rgba(45,90,78,0.09); }
+    .beyond-feature-header {
+      padding: 1.6rem 1.8rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .beyond-feature-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+    .beyond-feature-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+    .beyond-feature-sub {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .beyond-feature-body { padding: 1.4rem 1.8rem; }
+    .beyond-feature-body p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .beyond-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+      margin-right: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+    .beyond-link:hover { background: var(--accent); color: #fff; }
+    .parks-list { display: flex; flex-direction: column; gap: 0; }
+    .park-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .park-item:first-child { border-top: 1px solid var(--border); }
+    .park-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.6; }
+    .park-state { font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-left: auto; opacity: 0.7; }
+
+    /* RESPONSIVE END */
+    @media (max-width: 640px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-avatar { display: none; }
+      .about-grid, .projects-grid, .contact-inner, .beyond-grid { grid-template-columns: 1fr; }
+      .talk-item { grid-template-columns: 60px 1fr; gap: 1rem; }
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 0.8rem; }
+      main { padding: 0 1.2rem; }
+      .mentee-grid, .programs-grid, .training-grid { grid-template-columns: 1fr; }
+      .teaching-grid { grid-template-columns: 1fr; }
+      .experience-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="#hero">H. Weerathunge</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#mentoring">Mentoring</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#beyond">Beyond the Lab</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-text fade-in">
+        <p class="hero-subtitle">Postdoctoral Researcher · University of Michigan</p>
+        <h1>Hasini<br><em>Weerathunge</em></h1>
+        <p class="hero-desc">
+          Investigating the neural and physiological mechanisms of speech motor control using
+          multimodal neuroimaging, noninvasive neuromodulation, and neurocomputational modelling —
+          with a focus on stuttering, Parkinson's disease, and voice disorders.
+        </p>
+        <div class="tags">
+          <span class="tag">Speech Motor Control</span>
+          <span class="tag">Neurostimulation</span>
+          <span class="tag">Neuroimaging</span>
+          <span class="tag">Neurocomputational Models</span>
+        </div>
+        <div class="hero-links">
+          <a href="#publications" class="btn btn-primary">View Publications</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-avatar fade-in">HW</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <p class="section-label">Background</p>
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>
+            I am a Postdoctoral Research Fellow and Michigan Pioneer Fellow in the Department of
+            Psychiatry at the University of Michigan (Dr. Soo-Eun Chang's Speech Neurophysiology Lab),
+            where I investigate the neural bases of stuttering using structural and functional MRI,
+            diffusion-weighted imaging, EEG, and noninvasive neuromodulation (tACS, tDCS, LIFU).
+          </p>
+          <p>
+            I completed my Ph.D. and M.Sc. in Biomedical Engineering at Boston University (Dr. Cara
+            Stepp's Lab), where my dissertation focused on sensorimotor characterisation and
+            neurocomputational modelling of speech motor control in Parkinson's disease and
+            hyperfunctional voice disorders.
+          </p>
+          <p>
+            My broader goal is to develop neuromodulatory therapeutics that enhance quality of life
+            for clinical populations with voice and speech disorders, bridging basic neuroscience
+            with translational rehabilitation engineering.
+          </p>
+        </div>
+        <div class="about-details fade-in">
+          <div class="detail-row">
+            <span class="detail-label">Position</span>
+            <span class="detail-val">Postdoctoral Research Fellow · Michigan Pioneer Fellow</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Department</span>
+            <span class="detail-val">Psychiatry, University of Michigan</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">PhD</span>
+            <span class="detail-val">Biomedical Engineering, Boston University (2023)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Research Areas</span>
+            <span class="detail-val">Speech Motor Control · Stuttering · Parkinson's Disease · Neuroimaging · Neurostimulation · Neurocomputational Modelling</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Email</span>
+            <span class="detail-val">weerathh@med.umich.edu</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <p class="section-label">Research Output</p>
+      <h2 class="section-title">Publications</h2>
+      <div class="pub-list">
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2025</p>
+          <p class="pub-title">Characterization of Vocal Motor Control Using Laryngeal Kinematics in Individuals with Hyperfunctional Voice Disorders</p>
+          <p class="pub-authors">Weerathunge, H. R., Vojtech, J., Dunsmuir, C. J., Cocroft, S. J., Díaz-Cádiz, M. E., McKenna, V., &amp; Stepp, C. E.</p>
+          <p class="pub-journal">Journal of Speech, Language, and Hearing Research, 68(4), 1743–1757</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/40106413/" target="_blank" class="pub-link">PMID: 40106413 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2022</p>
+          <p class="pub-title">LaDIVA: A neurocomputational model providing laryngeal motor control for speech acquisition and production</p>
+          <p class="pub-authors">Weerathunge, H. R., Alzamendi, G. A., Cler, G. J., Guenther, F. H., Stepp, C. E., &amp; Zañartu, M.</p>
+          <p class="pub-journal">PLOS Computational Biology, 18(6), e1010159</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/35737706/" target="_blank" class="pub-link">PMID: 35737706 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2022</p>
+          <p class="pub-title">Auditory and somatosensory feedback mechanisms of laryngeal and articulatory speech motor control</p>
+          <p class="pub-authors">Weerathunge, H. R., Voon, T., Tardif, M., Cilento, D., &amp; Stepp, C. E.</p>
+          <p class="pub-journal">Experimental Brain Research</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/35736994/" target="_blank" class="pub-link">PMID: 35736994 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2022</p>
+          <p class="pub-title">What can altered auditory feedback paradigms tell us about vocal motor control in individuals with voice disorders?</p>
+          <p class="pub-authors">Weerathunge, H. R., Tomassi, N. E., &amp; Stepp, C. E.</p>
+          <p class="pub-journal">Perspectives of the ASHA Special Interest Groups</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/37397620/" target="_blank" class="pub-link">PMID: 37397620 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2021</p>
+          <p class="pub-title">Feedback and Feedforward Auditory-Motor Processes for Voice and Articulation in Parkinson's Disease</p>
+          <p class="pub-authors">Abur, D., Subaciute, A., Daliri, A., Lester-Smith, R., Lupiani, A. A., Cilento, D., Enos, N. M., Weerathunge, H. R., Tardif, M. C., &amp; Stepp, C. E.</p>
+          <p class="pub-journal">Journal of Speech, Language, and Hearing Research</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/34731577/" target="_blank" class="pub-link">PMID: 34731577 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2021</p>
+          <p class="pub-title">Assessing ecologically valid methods of auditory feedback measurement in individuals with typical speech</p>
+          <p class="pub-authors">Tomassi, N. E., Weerathunge, H. R., Cushman, M. R., Bohland, J. W., Stepp, C. E.</p>
+          <p class="pub-journal">Journal of Speech, Language, and Hearing Research</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/34941381/" target="_blank" class="pub-link">PMID: 34941381 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2021</p>
+          <p class="pub-title">Reliability and accuracy of expert auditory-perceptual evaluation of voice via telepractice platforms</p>
+          <p class="pub-authors">Dahl, K. L., Weerathunge, H. R., Buckley, D. P., Dolling, A. S., Díaz-Cádiz, M., Tracy, L. F., Stepp, C. E.</p>
+          <p class="pub-journal">American Journal of Speech-Language Pathology</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/34473568/" target="_blank" class="pub-link">PMID: 34473568 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2021</p>
+          <p class="pub-title">Accuracy of Acoustic Measures of Voice via Telehealth Platforms</p>
+          <p class="pub-authors">Weerathunge, H. R., Segina, R. K., Tracy, L., &amp; Stepp, C. E.</p>
+          <p class="pub-journal">Journal of Speech, Language, and Hearing Research</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/34157251/" target="_blank" class="pub-link">PMID: 34157251 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2020</p>
+          <p class="pub-title">Auditory-motor perturbations of voice fundamental frequency: feedback delay and amplification</p>
+          <p class="pub-authors">Weerathunge, H. R., Abur, D., Enos, N. M., Brown, K. M., &amp; Stepp, C. E.</p>
+          <p class="pub-journal">Journal of Speech, Language, and Hearing Research, 63(9), 2846–2860</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/32755506/" target="_blank" class="pub-link">PMID: 32755506 →</a></div>
+        </div>
+
+        <div class="pub-item fade-in">
+          <p class="pub-year">2020</p>
+          <p class="pub-title">A Simple 3-Parameter Model for Examining Adaptation in Speech and Voice Production</p>
+          <p class="pub-authors">Kearney, E., Nieto-Castañón, A., Weerathunge, H. R., Falsini, R., Daliri, A., Abur, D., &amp; Scott, T. L.</p>
+          <p class="pub-journal">Frontiers in Psychology, 10, 2995</p>
+          <div class="pub-links"><a href="https://pubmed.ncbi.nlm.nih.gov/32038381/" target="_blank" class="pub-link">PMID: 32038381 →</a></div>
+        </div>
+
+        <div style="background: rgba(45,90,78,0.04); border: 1px solid rgba(45,90,78,0.2); border-radius:4px; padding:1.2rem 1.6rem;" class="fade-in">
+          <p style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem;">Manuscripts in Review / Preparation</p>
+          <ul style="font-size:0.83rem; color:var(--muted); line-height:1.85; padding-left:1.2rem;">
+            <li>Parra, J. A., et al. incl. <strong>Weerathunge, H. R.</strong> — Modeling laryngeal biomechanical control using machine learning regressors. <em>JASA (in review)</em></li>
+            <li>Tomassi, N. E., <strong>Weerathunge, H. R.</strong>, et al. — Ecologically valid measures of auditory feedback in older adults with/without Parkinson's. <em>JSLHR (in review)</em></li>
+            <li>Tan, D. C., <strong>Weerathunge, H. R.</strong>, et al. — Kinematic features of laryngeal motor control in Parkinson's disease. <em>JSLHR (in review)</em></li>
+            <li><strong>Weerathunge, H. R.</strong>, et al. — Effects of Auditory and Somatosensory Feedback on Motor Control in Parkinson's Disease. <em>JSLHR (in prep)</em></li>
+            <li><strong>Weerathunge, H. R.</strong>, et al. — Effects of Dopaminergic Medication on Auditory and Somatosensory Control in Parkinson's Disease. <em>Movement Disorders (in prep)</em></li>
+            <li><strong>Weerathunge, H. R.</strong>, et al. — White Matter Fiber Density in Children who Stutter: a Fixel-based Analysis. <em>(in prep)</em></li>
+            <li><strong>Weerathunge, H. R.</strong>, et al. — Structure–Function Coupling in Adults who Stutter: Multimodal Connectivity Modeling. <em>(in prep)</em></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <p class="section-label">Current Work</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card fade-in">
+          <span class="project-icon">🧠</span>
+          <p class="project-title">Neural Bases of Stuttering</p>
+          <p class="project-desc">
+            Investigating structural and functional connectivity differences in adults and children who stutter
+            using multimodal MRI (fMRI, DTI, fixel-based analysis) and connectivity modelling in Dr. Soo-Eun Chang's lab at UMich.
+          </p>
+        </div>
+
+        <div class="project-card fade-in">
+          <span class="project-icon">⚡</span>
+          <p class="project-title">Noninvasive Neuromodulation</p>
+          <p class="project-desc">
+            Developing and applying tACS, tDCS, and low-intensity focused ultrasound stimulation (LIFU)
+            protocols to modulate neural oscillatory synchrony and speech motor circuits, with translational
+            applications for stuttering and motor speech disorders.
+          </p>
+        </div>
+
+        <div class="project-card fade-in">
+          <span class="project-icon">📐</span>
+          <p class="project-title">Neurocomputational Modelling</p>
+          <p class="project-desc">
+            Developing biologically-grounded models of speech motor control, including LaDIVA — a
+            neurocomputational model extending the DIVA framework to include laryngeal motor control
+            for speech acquisition and production.
+          </p>
+        </div>
+
+        <div class="project-card fade-in">
+          <span class="project-icon">🔬</span>
+          <p class="project-title">Sensorimotor Control in Parkinson's Disease</p>
+          <p class="project-desc">
+            Characterising auditory and somatosensory feedback mechanisms of laryngeal and articulatory
+            motor control in individuals with Parkinson's disease, including effects of dopaminergic
+            medication on voice and speech control.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TALKS -->
+    <section id="talks">
+      <p class="section-label">Presentations</p>
+      <h2 class="section-title">Talks & Conferences</h2>
+      <div class="talks-list">
+
+        <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border);">Invited Talks</p>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2025</span>
+          <div>
+            <p class="talk-title">Exploring and Modulating Speech Motor Control: Linking Brain, Behavior, and Models <span class="talk-type">Invited</span></p>
+            <p class="talk-venue">Perspectives in Communication Science Seminar Series, University of Pittsburgh, School of Health and Rehabilitation Sciences</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2023</span>
+          <div>
+            <p class="talk-title">LaDIVA: A neurocomputational model providing laryngeal motor control for speech acquisition and production <span class="talk-type">Invited</span></p>
+            <p class="talk-venue">Neural Bases of Speech Production Symposium, San Francisco, CA</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2023</span>
+          <div>
+            <p class="talk-title">Accuracy of Acoustic Measures of Voice via Telehealth Platforms <span class="talk-type">Invited</span></p>
+            <p class="talk-venue">Harvard-MIT Speech and Language Biomarkers Interest Group, Boston, MA (Virtual)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2022</span>
+          <div>
+            <p class="talk-title">LaDIVA: A neurocomputational model for laryngeal motor control <span class="talk-type">Invited</span></p>
+            <p class="talk-venue">University of Wisconsin Division of Otolaryngology, Voice &amp; Swallow Clinics Lecture Series (Virtual)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2022</span>
+          <div>
+            <p class="talk-title">Using Telepractice for the Assessment of Dysarthria and Dysphonia <span class="talk-type">Invited</span></p>
+            <p class="talk-venue">ASHA Convention, New Orleans, LA (Oral Seminar)</p>
+          </div>
+        </div>
+
+        <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-top:2rem; margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border);">Selected Conference Presentations</p>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2026</span>
+          <div>
+            <p class="talk-title">Assessing Ecologically Valid Alternative Measures of Auditory Feedback Control in Older Adults with and without Parkinson's Disease</p>
+            <p class="talk-venue">23rd Biennial Madonna Motor Speech Conference, Tempe, AZ (Oral Presentation)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2025</span>
+          <div>
+            <p class="talk-title">Structure–Function Coupling in Adults Who Stutter: Evidence from Multimodal Connectivity Modeling</p>
+            <p class="talk-venue">Society for Neurobiology of Language, 17th Annual Meeting, Washington D.C. (Poster)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2025</span>
+          <div>
+            <p class="talk-title">Differences in White Matter Fiber Density and Fiber-bundle Cross-section in Children who Stutter: a Fixel-based Analysis</p>
+            <p class="talk-venue">5th Biennial Boston Speech Motor Control Symposium, Boston, MA (Poster)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2024</span>
+          <div>
+            <p class="talk-title">Investigating the Effects of Auditory and Somatosensory Feedback on Laryngeal and Articulatory Motor Control in Parkinson's Disease</p>
+            <p class="talk-venue">13th International Seminar on Speech Production, Autrans, France (Oral Presentation)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2024</span>
+          <div>
+            <p class="talk-title">Effects of Dopaminergic Medication on Auditory and Somatosensory Control of Voice and Articulation in Parkinson's Disease</p>
+            <p class="talk-venue">22nd Biennial Madonna Motor Speech Conference, San Diego, CA (Oral Presentation)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2022</span>
+          <div>
+            <p class="talk-title">LaDIVA: A neurocomputational model providing laryngeal motor control for speech acquisition and production</p>
+            <p class="talk-venue">21st Biennial Madonna Motor Speech Conference, Charleston, SC (Oral Presentation)</p>
+          </div>
+        </div>
+
+        <div class="talk-item fade-in">
+          <span class="talk-year">2021</span>
+          <div>
+            <p class="talk-title">Accuracy of Acoustic Measures of Voice via Telepractice Video Conferencing Platforms</p>
+            <p class="talk-venue">14th International Conference on Advances in Quantitative Laryngology, Virtual/Bogotá, Colombia (Oral Presentation)</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MENTORING -->
+    <section id="mentoring">
+      <p class="section-label">Teaching & Supervision</p>
+      <h2 class="section-title">Mentoring</h2>
+
+      <!-- Philosophy -->
+      <div class="mentoring-philosophy fade-in">
+        <p>
+          Mentoring is a core part of my academic identity. I believe that good mentorship means
+          meeting students where they are — whether that is helping them run their first experiment,
+          interpret a complex dataset, or navigate the path to graduate school and beyond.
+        </p>
+        <p>
+          My approach is guided by three principles: <strong>curiosity</strong> — encouraging students
+          to ask their own questions; <strong>rigour</strong> — building strong technical and analytical
+          foundations; and <strong>care</strong> — supporting the whole person, not just the project.
+        </p>
+        <p>
+          I have mentored students across a range of contexts, from hands-on research assistantships
+          embedded in my PhD projects, to year-long structured programmes supporting undergraduates
+          as they explore research, higher studies, and career paths in science.
+        </p>
+      </div>
+
+      <!-- Research Mentoring -->
+      <div class="mentoring-category fade-in">
+        <p class="mentoring-category-title">Research Assistants — PhD Project Collaborators</p>
+        <div class="mentee-grid">
+          <div class="mentee-card">
+            <p class="mentee-name">Placeholder Student A</p>
+            <p class="mentee-detail">Undergraduate RA · Assisted with data collection and preprocessing for speech motor adaptation experiments.</p>
+            <span class="mentee-tag">Neuroimaging</span>
+          </div>
+          <div class="mentee-card">
+            <p class="mentee-name">Placeholder Student B</p>
+            <p class="mentee-detail">Undergraduate RA · Contributed to TMS protocol development and participant testing.</p>
+            <span class="mentee-tag">Neurostimulation</span>
+          </div>
+          <div class="mentee-card">
+            <p class="mentee-name">Placeholder Student C</p>
+            <p class="mentee-detail">Undergraduate RA · Supported computational modelling analysis and figure preparation.</p>
+            <span class="mentee-tag">Computational</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Masters Supervision -->
+      <div class="mentoring-category fade-in">
+        <p class="mentoring-category-title">Masters Students — Supervision & Committee</p>
+        <div class="mentee-grid">
+          <div class="mentee-card">
+            <p class="mentee-name">Placeholder Student D</p>
+            <p class="mentee-detail">Masters Student · Main supervisor. Thesis on auditory-motor integration in speech production.</p>
+            <span class="mentee-tag">Main Supervisor</span>
+          </div>
+          <div class="mentee-card">
+            <p class="mentee-name">Placeholder Student E</p>
+            <p class="mentee-detail">Masters Student · Committee member. Project on neurocomputational modelling of motor control.</p>
+            <span class="mentee-tag">Committee Member</span>
+          </div>
+          <div class="mentee-card">
+            <p class="mentee-name">Placeholder Student F</p>
+            <p class="mentee-detail">Masters Student · Main supervisor. Research on cortical contributions to speech fluency.</p>
+            <span class="mentee-tag">Main Supervisor</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Structured Programmes -->
+      <div class="mentoring-category fade-in">
+        <p class="mentoring-category-title">Structured Mentorship Programmes</p>
+        <div class="programs-grid">
+          <div class="program-card">
+            <p class="program-name">ScholarX — Sustainable Education Foundation</p>
+            <p class="program-desc">
+              Year-long mentorship pairing undergraduates globally with researchers. Guided mentees
+              on research skills, graduate school applications, scientific writing, and career
+              exploration in neuroscience and allied fields.
+            </p>
+            <p class="program-meta">Graduate Mentor · Cohorts 2021, 2024</p>
+          </div>
+          <div class="program-card">
+            <p class="program-name">SLAKE — Sri Lankan American Knowledge Exchange</p>
+            <p class="program-desc">
+              Mentored undergraduate students navigating research pathways and graduate school
+              applications, providing guidance on career options within and beyond academia.
+            </p>
+            <p class="program-meta">Graduate Mentor · 2021</p>
+          </div>
+          <div class="program-card">
+            <p class="program-name">WIN — Women in Neuroscience</p>
+            <p class="program-desc">
+              Mentored undergraduate women entering neuroscience, supporting their academic
+              development, research exposure, and building confidence as emerging scientists.
+            </p>
+            <p class="program-meta">Graduate Mentor · 2021–2022</p>
+          </div>
+          <div class="program-card">
+            <p class="program-name">MARC-ASHA Mentoring Academic-Research Careers</p>
+            <p class="program-desc">
+              Participated as a protégé in ASHA's structured mentoring programme, working with
+              faculty mentors across four years while simultaneously mentoring junior students
+              in research and professional development.
+            </p>
+            <p class="program-meta">Protégé · 2021–2024</p>
+          </div>
+        </div>
+        <p style="font-size:0.85rem; color:var(--muted); line-height:1.85;">
+          Across these programmes, mentoring has spanned a broad range of needs: designing and executing
+          technical research projects, preparing competitive graduate school applications, exploring
+          career options within and beyond academia, developing scientific communication skills,
+          and building confidence as emerging researchers.
+        </p>
+      </div>
+
+      <!-- Opportunities -->
+      <div class="opportunities-box fade-in">
+        <h4>Interested in Working Together?</h4>
+        <p>
+          I am always happy to hear from motivated students interested in speech neuroscience,
+          motor control, neuroimaging, or neuromodulation. Whether you are looking for a research
+          assistant position, a final-year project, or informal mentorship around graduate school
+          and career planning, feel free to get in touch.
+        </p>
+        <p>
+          I particularly welcome students from underrepresented backgrounds and those exploring
+          non-traditional paths into research.
+        </p>
+        <div style="margin-top:1.2rem;">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching">
+      <p class="section-label">Education & Tutorials</p>
+      <h2 class="section-title">Teaching</h2>
+
+      <!-- Intro -->
+      <p class="fade-in" style="font-size:0.95rem; color:var(--muted); max-width:620px; line-height:1.9; margin-bottom:3rem;">
+        While I am not currently teaching formally, I have experience as a full course instructor
+        and teaching fellow at Boston University, and I am actively developing open tutorial resources
+        in neuroimaging analysis and speech science. I am enthusiastic about teaching at both
+        graduate and undergraduate levels across the topics below.
+      </p>
+
+      <!-- Teaching Interests -->
+      <p class="section-label" style="margin-bottom:0.8rem;">Teaching Interests</p>
+      <div class="teaching-grid fade-in">
+
+        <div class="teaching-card">
+          <span class="teaching-card-icon">🗣️</span>
+          <p class="teaching-card-title">Speech Science & Acoustics</p>
+          <p class="teaching-card-desc">Phonetics, acoustic phonetics, articulatory and laryngeal physiology, auditory perception, and motor speech disorders.</p>
+          <p class="teaching-card-level">Graduate & Undergraduate</p>
+        </div>
+
+        <div class="teaching-card">
+          <span class="teaching-card-icon">📡</span>
+          <p class="teaching-card-title">Biosignal Processing</p>
+          <p class="teaching-card-desc">EEG, EMG, acoustic and kinematic signal acquisition, signal conditioning, filtering, feature extraction, and spectral analysis for biomedical and speech applications.</p>
+          <p class="teaching-card-level">Graduate & Undergraduate</p>
+        </div>
+
+        <div class="teaching-card">
+          <span class="teaching-card-icon">🧩</span>
+          <p class="teaching-card-title">Neuroimaging Analysis</p>
+          <p class="teaching-card-desc">Structural and functional MRI, diffusion-weighted imaging, fixel-based analysis, surface-based morphometry, and connectivity modelling using tools including FSL, MRtrix3, and FreeSurfer.</p>
+          <p class="teaching-card-level">Graduate & Undergraduate</p>
+        </div>
+
+        <div class="teaching-card">
+          <span class="teaching-card-icon">🧠</span>
+          <p class="teaching-card-title">Neural Control of Speech</p>
+          <p class="teaching-card-desc">Cortical and subcortical motor systems for speech, sensorimotor integration, neurocomputational models of speech production, and neural bases of speech disorders.</p>
+          <p class="teaching-card-level">Graduate & Undergraduate</p>
+        </div>
+
+        <div class="teaching-card">
+          <span class="teaching-card-icon">⚙️</span>
+          <p class="teaching-card-title">Research Methods & Statistics</p>
+          <p class="teaching-card-desc">Experimental design, quantitative methods, statistical inference, and programming (Python, MATLAB) for speech, hearing, and biomedical research.</p>
+          <p class="teaching-card-level">Graduate & Undergraduate</p>
+        </div>
+
+        <div class="teaching-card">
+          <span class="teaching-card-icon">🫁</span>
+          <p class="teaching-card-title">Anatomy & Physiology of Speech</p>
+          <p class="teaching-card-desc">Respiratory, laryngeal, and articulatory anatomy and physiology; hearing sciences, hearing loss, and audiometry.</p>
+          <p class="teaching-card-level">Undergraduate</p>
+        </div>
+
+      </div>
+
+      <!-- Teaching Experience -->
+      <p class="section-label" style="margin-bottom:0.8rem; margin-top:0.5rem;">Teaching Experience</p>
+      <div style="margin-bottom:3rem;">
+        <div class="experience-row fade-in">
+          <span class="experience-year">Fall 2022</span>
+          <div>
+            <p class="experience-title">Introduction to Speech Science</p>
+            <p class="experience-role">Full Course Instructor · Boston University (BU SAR SH 523)</p>
+          </div>
+        </div>
+        <div class="experience-row fade-in">
+          <span class="experience-year">Fall 2020</span>
+          <div>
+            <p class="experience-title">Introduction to Programming</p>
+            <p class="experience-role">Graduate Teaching Fellow · Boston University (BU EK 125)</p>
+          </div>
+        </div>
+        <div class="experience-row fade-in">
+          <span class="experience-year">Fall 2019</span>
+          <div>
+            <p class="experience-title">Biomedical Signal Processing</p>
+            <p class="experience-role">Graduate Teaching Assistant · Boston University (BU BE 535)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutorials -->
+      <p class="section-label" style="margin-bottom:0.8rem;">Open Tutorials & Resources</p>
+
+      <div class="tutorial-card fade-in">
+        <div class="tutorial-card-header">
+          <p class="tutorial-card-title">Fixel-Based Analysis: A Step-by-Step Tutorial</p>
+          <span class="tutorial-badge tutorial-badge-live">Available</span>
+        </div>
+        <p class="tutorial-card-desc">
+          A comprehensive, reproducible tutorial covering the full fixel-based analysis (FBA) pipeline
+          for diffusion-weighted MRI data — from raw data preprocessing through to group-level
+          statistical analysis. Aimed at researchers and graduate students in neuroimaging who want
+          to apply FBA to investigate white matter microstructure (fibre density and fibre-bundle
+          cross-section) in clinical and developmental populations.
+        </p>
+        <div class="tutorial-topics">
+          <span class="tutorial-topic">DWI Preprocessing</span>
+          <span class="tutorial-topic">MRtrix3</span>
+          <span class="tutorial-topic">FOD Estimation</span>
+          <span class="tutorial-topic">Fixel Correspondence</span>
+          <span class="tutorial-topic">CFE Statistics</span>
+          <span class="tutorial-topic">Visualisation</span>
+        </div>
+        <div class="tutorial-footer">
+          <span>🔧 Tools: MRtrix3 · FSL · Python</span>
+          <a href="https://github.com/HasiniWeerathunge/FixelBasedAnalysis" target="_blank" class="tutorial-link">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="tutorial-card fade-in">
+        <div class="tutorial-card-header">
+          <p class="tutorial-card-title">Biosignal Processing for Speech & Voice Research</p>
+          <span class="tutorial-badge tutorial-badge-soon">Coming Soon</span>
+        </div>
+        <p class="tutorial-card-desc">
+          Tutorial series covering acquisition, preprocessing, and analysis of acoustic, EEG, and
+          kinematic signals for speech and voice research. Will include worked examples in Python
+          and MATLAB with real experimental datasets.
+        </p>
+        <div class="tutorial-topics">
+          <span class="tutorial-topic">EEG</span>
+          <span class="tutorial-topic">Acoustics</span>
+          <span class="tutorial-topic">Laryngeal Kinematics</span>
+          <span class="tutorial-topic">Python</span>
+          <span class="tutorial-topic">MATLAB</span>
+        </div>
+        <div class="tutorial-footer">
+          <span>🔧 Tools: Python · MATLAB · MNE</span>
+          <a href="https://github.com/HasiniWeerathunge" target="_blank" class="tutorial-link">GitHub Profile →</a>
+        </div>
+      </div>
+
+      <div class="tutorial-card fade-in">
+        <div class="tutorial-card-header">
+          <p class="tutorial-card-title">Structural & Functional Neuroimaging Analysis</p>
+          <span class="tutorial-badge tutorial-badge-soon">Coming Soon</span>
+        </div>
+        <p class="tutorial-card-desc">
+          Practical guides for structural MRI (surface-based morphometry, cortical thickness),
+          functional MRI (task and resting-state), and multimodal connectivity analyses —
+          applied to speech and language neuroscience research.
+        </p>
+        <div class="tutorial-topics">
+          <span class="tutorial-topic">fMRI</span>
+          <span class="tutorial-topic">FreeSurfer</span>
+          <span class="tutorial-topic">FSL</span>
+          <span class="tutorial-topic">Connectivity</span>
+          <span class="tutorial-topic">Visualisation</span>
+        </div>
+        <div class="tutorial-footer">
+          <span>🔧 Tools: FSL · FreeSurfer · Python · AFNI</span>
+          <a href="https://github.com/HasiniWeerathunge" target="_blank" class="tutorial-link">GitHub Profile →</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- TRAINING -->
+    <section id="training">
+      <p class="section-label">Skills & Development</p>
+      <h2 class="section-title">Training</h2>
+
+      <p class="fade-in" style="font-size:0.95rem; color:var(--muted); max-width:620px; line-height:1.9; margin-bottom:3rem;">
+        Alongside my research, I have pursued intensive training in neuroimaging, neuromodulation,
+        computational methods, and professional development — building a broad and technically
+        rigorous skillset across the full pipeline from data acquisition to analysis and dissemination.
+      </p>
+
+      <!-- Neuroimaging & Connectivity -->
+      <div class="training-category fade-in">
+        <p class="training-category-title">Neuroimaging & Connectivity</p>
+        <div class="training-grid">
+          <div class="training-card">
+            <p class="training-card-year">2024</p>
+            <p class="training-card-title">Structural and Functional Brain Connectivity via MRI and fMRI</p>
+            <p class="training-card-org">Martinos Center, Charlestown, Massachusetts</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2025</p>
+            <p class="training-card-title">Advanced Training in Statistical Methods in Neuroimaging and Genetics</p>
+            <p class="training-card-org">School of Medicine, University of Utah</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2025</p>
+            <p class="training-card-title">Collaborative Decentralized Research and Analysis of Neuroimaging Data (COINSTAC) Hackathon</p>
+            <p class="training-card-org">TReNDS Center, Georgia State University</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2021–2022</p>
+            <p class="training-card-title">OHBM International Online Mentoring Programme</p>
+            <p class="training-card-org">Organization for Human Brain Mapping · Mentor: Dr. Douglas Garrett, Max Planck UCL Center</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neuromodulation -->
+      <div class="training-category fade-in">
+        <p class="training-category-title">Neuromodulation</p>
+        <div class="training-grid">
+          <div class="training-card">
+            <p class="training-card-year">2024</p>
+            <p class="training-card-title">NC NM4R Introductory Neuromodulation for Rehabilitation Workshop</p>
+            <p class="training-card-org">Charleston, South Carolina</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2024</p>
+            <p class="training-card-title">RP-CNBI Neuromodulation in Aging and Dementia Symposium</p>
+            <p class="training-card-org">Ann Arbor, Michigan</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2022</p>
+            <p class="training-card-title">3rd International Workshop on Non-Invasive Brain Stimulation (NIBS)</p>
+            <p class="training-card-org">Minneapolis, Minnesota · Fundamentals and Applications of TMS</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2021</p>
+            <p class="training-card-title">Fundamentals and Applications of Transcranial Magnetic Stimulation (TMS)</p>
+            <p class="training-card-org">Three-day workshop, Brainbox Initiative</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Computational & Methods -->
+      <div class="training-category fade-in">
+        <p class="training-category-title">Computational Methods & BCI</p>
+        <div class="training-grid">
+          <div class="training-card">
+            <p class="training-card-year">2021</p>
+            <p class="training-card-title">BR41N.IO Brain Computer Interface Designers' Hackathon</p>
+            <p class="training-card-org">IEEE SMC · Team Brain Troopers: Motor imagery BCI analysis for chronic stroke patients</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grant Writing & Career Development -->
+      <div class="training-category fade-in">
+        <p class="training-category-title">Grant Writing & Career Development</p>
+        <div class="training-grid">
+          <div class="training-card">
+            <p class="training-card-year">2025</p>
+            <p class="training-card-title">K99/R00 Bootcamp</p>
+            <p class="training-card-org">University of Michigan Office of Graduate and Postdoctoral Studies (OGPS)</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2025</p>
+            <p class="training-card-title">K Grant Summer Workshop</p>
+            <p class="training-card-org">University of Michigan Institute for Clinical and Health Research (MICHR)</p>
+          </div>
+          <div class="training-card">
+            <p class="training-card-year">2021–2024</p>
+            <p class="training-card-title">Mentoring Academic-Research Careers (MARC-ASHA) Programme</p>
+            <p class="training-card-org">American Speech-Language-Hearing Association · Four-year structured career mentoring</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BEYOND THE LAB -->
+    <section id="beyond">
+      <p class="section-label">Life Outside Research</p>
+      <h2 class="section-title">Beyond the Lab</h2>
+
+      <p class="fade-in" style="font-size:0.95rem; color:var(--muted); max-width:620px; line-height:1.9; margin-bottom:3rem;">
+        Science is what I do — but curiosity, storytelling, and adventure are who I am.
+        Here's a little of what keeps me going outside the lab.
+      </p>
+
+      <div class="beyond-grid">
+
+        <!-- Stand-up Comedy -->
+        <div class="beyond-feature fade-in">
+          <div class="beyond-feature-header">
+            <span class="beyond-feature-icon">🎤</span>
+            <p class="beyond-feature-title">Stand-up Comedy</p>
+            <p class="beyond-feature-sub">Open Mic · Comedy Writing</p>
+          </div>
+          <div class="beyond-feature-body">
+            <p>
+              In early 2026 I completed a stand-up comedy writing workshop and haven't looked back.
+              I now test tight fives at open mics around Ann Arbor — finding that the discipline
+              of crafting a good joke isn't entirely unlike crafting a good scientific argument.
+              (Both require knowing your audience and cutting everything that doesn't land.)
+            </p>
+            <p>
+              My sets tend to draw on the absurdities of academic life, the immigrant-scientist
+              experience, and the general chaos of being human. Recordings live on Instagram.
+            </p>
+            <a href="https://www.instagram.com/hasiniwee_thecomic" target="_blank" class="beyond-link">
+              📸 @hasiniwee_thecomic
+            </a>
+          </div>
+        </div>
+
+        <!-- National Parks -->
+        <div class="beyond-feature fade-in">
+          <div class="beyond-feature-header">
+            <span class="beyond-feature-icon">🏔️</span>
+            <p class="beyond-feature-title">National Parks</p>
+            <p class="beyond-feature-sub">Explorer · Hiker · In Progress</p>
+          </div>
+          <div class="beyond-feature-body">
+            <p>
+              I am on a slow but deliberate mission to explore the US National Parks system.
+              There is something grounding about swapping the lab bench for a trail —
+              the scale of geological time has a way of putting grant deadlines in perspective.
+            </p>
+            <p style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.8rem;">Parks visited</p>
+            <div class="parks-list">
+              <div class="park-item"><span class="park-dot"></span> Placeholder Park 1 <span class="park-state">State</span></div>
+              <div class="park-item"><span class="park-dot"></span> Placeholder Park 2 <span class="park-state">State</span></div>
+              <div class="park-item"><span class="park-dot"></span> Placeholder Park 3 <span class="park-state">State</span></div>
+              <div class="park-item"><span class="park-dot"></span> Placeholder Park 4 <span class="park-state">State</span></div>
+              <div class="park-item"><span class="park-dot"></span> Placeholder Park 5 <span class="park-state">State</span></div>
+            </div>
+            <p style="font-size:0.78rem; color:var(--muted); margin-top:1rem; margin-bottom:0;">
+              List in progress — send me your recommendations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-inner">
+        <div class="contact-text fade-in">
+          <p>
+            I am always happy to discuss research, potential collaborations, or opportunities
+            in speech neuroscience and neuromodulation.
+          </p>
+          <p>
+            Feel free to reach out via email or connect through any of the channels below.
+          </p>
+        </div>
+        <div class="contact-links fade-in">
+          <a href="mailto:weerathh@med.umich.edu" class="contact-link">
+            <span class="contact-icon">✉</span>
+            weerathh@med.umich.edu
+          </a>
+          <a href="https://github.com/HasiniWeerathunge" target="_blank" class="contact-link">
+            <span class="contact-icon">⌥</span>
+            GitHub
+          </a>
+          <a href="https://scholar.google.com" target="_blank" class="contact-link">
+            <span class="contact-icon">🎓</span>
+            Google Scholar
+          </a>
+          <a href="https://twitter.com" target="_blank" class="contact-link">
+            <span class="contact-icon">𝕏</span>
+            Twitter / X
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-link">
+            <span class="contact-icon">in</span>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Hasini Weerathunge · Department of Psychiatry, University of Michigan
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
