@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LIFU Thalamocortical Neuromodulation Study | Hasini Weerathunge</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f2;
+      --text: #1a1a1a;
+      --muted: #6b6560;
+      --accent: #2d5a4e;
+      --border: #dedad5;
+      --card: #ffffff;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(247,245,242,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 max(2rem, 8vw);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-back {
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 160px 2rem 6rem;
+    }
+
+    .study-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .study-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 1.4rem;
+    }
+
+    .study-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .study-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      opacity: 0.85;
+    }
+
+    .study-body p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Reuse of index.html project-link-card styling */
+    .study-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .study-link-card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.6rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .study-link-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 16px rgba(45,90,78,0.07);
+    }
+    .study-link-card.disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .study-link-icon { font-size: 1.4rem; margin-bottom: 0.8rem; display: block; }
+    .study-link-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+    .study-link-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+    .study-link-cue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 1rem;
+    }
+
+    .study-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .study-footer a {
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .study-footer a:hover { color: var(--text); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 130px 1.2rem 4rem; }
+      .study-links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-name">Hasini Weerathunge</a>
+    <a href="../index.html#projects" class="nav-back">← Projects</a>
+  </nav>
+
+  <main>
+    <p class="study-eyebrow">Projects · Current Work</p>
+    <h1 class="study-title">Noninvasive Thalamocortical Neuromodulation With Low-Intensity Focused Ultrasound for Persistent Developmental Stuttering</h1>
+    <div class="study-meta">
+      <span class="study-tag">NCT07668882</span>
+      <span>IRB-Approved Human Study</span>
+    </div>
+
+    <div class="study-body">
+      <p>
+        This study investigates low-intensity focused ultrasound (LIFU) as a noninvasive method for
+        modulating the ventral intermediate (VIM) thalamus, a key node in circuits governing speech
+        motor timing and coordination. We are recruiting adults who stutter and neurotypical adult
+        controls to characterize how targeted thalamic perturbation propagates through distributed
+        cortical and subcortical networks, and how those network-level changes relate to speech
+        motor behavior.
+      </p>
+      <p>
+        The study combines LIFU delivery with multimodal neuroimaging to link a causal circuit
+        intervention to measurable changes in brain network activity and behavior — part of a
+        broader effort to build individualized, image-guided neuromodulation approaches for speech
+        and motor disorders.
+      </p>
+    </div>
+
+    <h2 class="section-heading">Study Registration &amp; Preregistration</h2>
+    <div class="study-links">
+      <a href="https://clinicaltrials.gov/study/NCT07668882" target="_blank" class="study-link-card">
+        <span class="study-link-icon">📋</span>
+        <p class="study-link-title">ClinicalTrials.gov</p>
+        <p class="study-link-desc">Official study registration, NCT07668882 — status, eligibility criteria, and design.</p>
+        <span class="study-link-cue">View Registration →</span>
+      </a>
+      <a href="https://osf.io/4kz9j/overview" target="_blank" class="study-link-card">
+        <span class="study-link-icon">🔗</span>
+        <p class="study-link-title">OSF Preregistration</p>
+        <p class="study-link-desc">Study preregistration on the Open Science Framework.</p>
+        <span class="study-link-cue">View Preregistration →</span>
+      </a>
+    </div>
+
+    <div class="study-footer">
+      <a href="../index.html#projects">← Back to Projects</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Hasini Weerathunge · Department of Psychiatry, University of Michigan
+  </footer>
+
+</body>
+</html>
